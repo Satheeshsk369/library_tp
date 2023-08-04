@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.home),
-              title: Text('Home'),
+              title: const Text('Home'),
               onTap: () {
                 // Do nothing, since we're already on the Home screen.
                 Navigator.pop(context); // Close the drawer

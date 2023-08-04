@@ -4,10 +4,10 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class OPACScreen extends StatefulWidget {
   @override
-  _OPACScreenState createState() => _OPACScreenState();
+  OPACScreenState createState() => OPACScreenState();
 }
 
-class _OPACScreenState extends State<OPACScreen> {
+class OPACScreenState extends State<OPACScreen> {
   String _searchText = '';
   String _filterOption = "Any";
 
@@ -376,9 +376,6 @@ class SearchFieldState extends State<SearchField> {
 
   void _performSearch() {
     widget.onSearchTextChanged(searchText);
-    // Here, you can implement your search logic using the searchText value
-    // For now, let's just print the search text
-    print('Performing search: $searchText');
   }
 
   @override

@@ -86,7 +86,7 @@ class EditPageState extends State<EditPage> {
 
     // Show a snackbar to indicate success
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Book added successfully')),
+      const SnackBar(content: Text('Book added successfully')),
     );
   }
 
@@ -94,11 +94,11 @@ class EditPageState extends State<EditPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Page'),
+        title: const Text('Edit Page'),
       ),
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: Colors.white70,
@@ -111,20 +111,20 @@ class EditPageState extends State<EditPage> {
               TextField(
                 controller: _accNoController,
                 keyboardType: TextInputType.number, // Set numeric keyboard type
-                decoration: InputDecoration(labelText: 'ACC No'),
+                decoration: const InputDecoration(labelText: 'ACC No'),
               ),
               TextField(
                 controller: _locationController,
-                decoration: InputDecoration(labelText: 'Location'),
+                decoration: const InputDecoration(labelText: 'Location'),
               ),
               TextField(
                 controller: _isbnController,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'ISBN'),
+                decoration: const InputDecoration(labelText: 'ISBN'),
               ),
               ElevatedButton(
                 onPressed: _onAddButtonPressed,
-                child: Text('Add'),
+                child: const Text('Add'),
               ),
             ],
           ),
