@@ -1,0 +1,49 @@
+name: Build and Publish APK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v8
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Analyze Flutter Code
+      run: flutter analyze
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v8
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Build APK
+      run: flutter build apk --release --output-dir=build/app/outputs/flutter-apk/release-apk
+
+    - name: Upload APK as an Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: release-apk
+        path: build/app/outputs/flutter-apk/release-apk/app-release.apk
+
+    - name: Clean up
+      run: flutter clean
