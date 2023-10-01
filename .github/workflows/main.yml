@@ -19,9 +19,9 @@ jobs:
 
     - name: Analyze
       run: |
-        - flutter clean
-        - flutter pub get
-        - flutter analyze
+        flutter clean
+        flutter pub get
+        flutter analyze
 
   build:
     runs-on: ubuntu-latest
