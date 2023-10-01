@@ -12,26 +12,26 @@ jobs:
 
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Flutter
-      uses: subosito/flutter-action@v8
+      uses: subosito/flutter-action@v2
 
-    - name: Install dependencies
-      run: flutter pub get
-
-    - name: Analyze Flutter Code
-      run: flutter analyze
+    - name: Analyze
+      run: |
+        - flutter clean
+        - flutter pub get
+        - flutter analyze
 
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Flutter
-      uses: subosito/flutter-action@v8
+      uses: subosito/flutter-action@v2
 
     - name: Install dependencies
       run: flutter pub get
