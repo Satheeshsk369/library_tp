@@ -1,4 +1,4 @@
-name: Flutter Analyze
+name: Flutter Test
 
 on:
   - push
@@ -29,9 +29,13 @@ jobs:
         cache: true
       id: flutter
 
-    - name: Analyze
+    - name: 🔍 Flutter Analyze
       run: 
         flutter pub get
         flutter analyze
+
+    - name: 💡 Flutter Test
+      run:
+        flutter test
 
   
