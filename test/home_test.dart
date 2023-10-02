@@ -42,7 +42,7 @@ void main() {
 
   testWidgets('EditPage UI Test', (WidgetTester tester) async {
     // Build the EditPage widget
-    await tester.pumpWidget(buildTestWidget(const EditPage()));
+    await tester.pumpWidget(buildTestWidget(EditPage()));
 
     // Verify that key widgets are present
     expect(find.text('Edit Page'), findsOneWidget);
@@ -53,7 +53,7 @@ void main() {
 
   testWidgets('OPACScreen UI Test', (WidgetTester tester) async {
     // Build the OPACScreen widget
-    await tester.pumpWidget(buildTestWidget(const OPACScreen()));
+    await tester.pumpWidget(buildTestWidget(OPACScreen()));
 
     // Verify that key widgets are present
     expect(find.text('University of Madras'), findsNWidgets(2)); // Assumes two instances are present
