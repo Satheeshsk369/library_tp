@@ -1,11 +1,12 @@
-name: Flutter Test
+name: Flutter Build
 
 on:
   - push
   - workflow_dispatch
 
 jobs:
-  Analyze:
+
+  AndroidBuild:
   
     runs-on: ubuntu-latest
 
@@ -34,8 +35,13 @@ jobs:
         flutter pub get
         flutter analyze
 
-    - name: 💡 Flutter Test
+    - name: 🏗️ Flutter Build
       run:
-        flutter test
+        flutter build apk --release
 
+    - name: 🚀 Archive and Publish Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: release-apk
+        path: build/app/outputs/flutter-apk/app-release.apk
   
